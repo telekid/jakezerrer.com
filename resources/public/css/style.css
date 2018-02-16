@@ -1,3 +1,250 @@
-h1 {
-  text-decoration: underline;
+/* Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    height: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+p, div {
+    line-height: 1.6;
+}
+
+figure {
+    margin: 0;
+}
+
+/* Common Component Styles */
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page Component Styles: Home */
+
+.home__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0;
+}
+
+.home {
+    padding: 96px;
+}
+
+.home__links ul {
+    list-style-type: none;
+    margin-top: 32px;
+}
+
+.home__links li {
+    display: inline;
+    margin-right: 16px;
+}
+
+.home__links li:last-child {
+    margin-right: 0;
+}
+
+.home__links a {
+    color: #858585;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+.home__links a:hover {
+    color: black;
+}
+
+.home__header {
+    transform: rotateY(-180deg) skew(27deg);
+    font-family: cardo;
+    font-size: 96px;
+    font-weight: 100;
+    line-height: 1.3;
+    border: 1px solid #33aeae;
+    padding: 60px 100px;
+}
+
+
+/* Page Component Styles: Portfolio */
+
+.portfolio {
+    margin-top: 100px;
+}
+
+@media (max-width: 600px) {
+    .portfolio {
+        margin-top: 0;
+    }
+}
+
+.project {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    border-bottom: 1px solid #ddd;
+
+}
+
+@media (max-width: 600px) {
+    .project {
+        flex-direction: column;
+        margin-bottom: 32px;
+    }
+}
+
+.project:last-child {
+    margin-bottom: 200px;
+    border-bottom: 0;
+}
+
+.project__overview-wrap {
+    width: 250px;
+    text-align: right;
+    margin-bottom: 200px;
+}
+
+@media (max-width: 600px) {
+    .project__overview-wrap {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+.project__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: #f3f3f3;
+    padding: 8px 16px;
+    margin-right: -16px;
+    margin-bottom: 32px;
+}
+
+
+@media (max-width: 600px) {
+    .project__nav {
+        margin: 0;
+        align-items: flex-start;
+    }
+}
+
+.project__nav h1 {
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.project__nav a {
+    color: #666;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+}
+
+.project__nav a:hover {
+    color: black;
+}
+
+.project__overview {
+    top: 100px;
+    position: sticky;
+    align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+    .project__overview {
+        padding: 16px;
+    }
+}
+
+.project__header {
+    margin-bottom: 8px;
+}
+
+.project__description {
+    font-weight: 300;
+}
+
+.project__images {
+    width: 600px;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 600px) {
+    .project__images {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.project__image {
+    display: block;
+    margin-bottom: 100px;
+    flex: 1 0 auto;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    .project__image {
+        padding: 32px;
+        margin-bottom: 0;
+    }
+}
+
+.project__image img {
+    background: linear-gradient(to bottom, #333, #111);
+    display: block;
+    box-sizing: border-box;
+    border-radius: 6px;
+    box-shadow:
+        0 6px 10px rgba(0, 0, 0, 0.18),
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 600px) {
+    .project__image img {
+        width: 100%;
+    }
+}
+
+.project__image img:hover + .project__image-description, .product__image-description:hover {
+    transform: translateY(48px);
+    opacity: 1;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.project__image-description {
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    z-index: -1;
+    font-size: 12px;
+    font-style: italic;
+    color: white;
+    font-weight: 300;
+    background: #333;
+    padding: 6px 12px;
+    box-shadow: 0 0 22px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+    transform: translateY(-50px);
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
 }
