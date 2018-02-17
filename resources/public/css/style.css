@@ -71,7 +71,7 @@ figure {
     color: black;
 }
 
-.home__header {
+.home__company-header {
     transform: rotateY(-180deg) skew(27deg);
     font-family: cardo;
     font-size: 96px;
@@ -178,7 +178,7 @@ figure {
     margin-bottom: 8px;
 }
 
-.project__description {
+.project__company-description {
     font-weight: 300;
 }
 
@@ -196,11 +196,19 @@ figure {
     }
 }
 
+.project__description {
+    margin: 8px 0 16px;
+}
+
+.project__section {
+    margin: 8px 0 16px;
+}
+
 .project__image {
     display: block;
-    margin-bottom: 100px;
     flex: 1 0 auto;
     position: relative;
+    margin: 25px 0 60px;
 }
 
 @media (max-width: 600px) {
@@ -210,7 +218,25 @@ figure {
     }
 }
 
-.project__image img {
+.project__skills-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px;
+    margin: 16px 0;
+    border-radius: 6px;
+    background: #eee;
+}
+
+.project__skills {
+    display: flex;
+}
+
+.project__skill {
+    margin-right: 16px;
+    list-style: none;
+}
+
+.project__image-wrap {
     background: linear-gradient(to bottom, #333, #111);
     display: block;
     box-sizing: border-box;
