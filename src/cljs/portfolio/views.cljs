@@ -52,7 +52,7 @@
 (defn description [text] [:p.project__description text])
 
 (defn skills [skills] [:div.project__skills [:h1 "technologies used"]
-                       [:ul.project__skills-wrap (map (fn [skill] [:li.project__skill skill]) skills)]])
+                       [:ul.project__skills-wrap (map-indexed (fn [idx skill] [:li.project__skill {:key idx} skill]) skills)]])
 
 (defn portfolio []
   [:div (company :name "Refuge"
@@ -60,7 +60,7 @@
                  :slug "refuge"
                  :description "App for finding, sharing and supporting new music"
                  :content [
-                           (skills ["Figmaaaa"])
+                           (skills ["Figma"])
                            (example-image :filename "refuge-landing.png"
                                           :caption "the refu.ge home page"
                                           :width 600)

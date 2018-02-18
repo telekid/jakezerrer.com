@@ -187,6 +187,7 @@ figure {
     padding-left: 100px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 @media (max-width: 600px) {
@@ -236,6 +237,7 @@ figure {
 }
 
 .project__image-wrap {
+    overflow: hidden;
     background: linear-gradient(to bottom, #333, #111);
     display: block;
     box-sizing: border-box;
@@ -243,6 +245,10 @@ figure {
     box-shadow:
         0 6px 10px rgba(0, 0, 0, 0.18),
         0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.project__image img {
+    display: block;
 }
 
 @media (max-width: 600px) {
