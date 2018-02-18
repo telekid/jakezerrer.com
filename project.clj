@@ -64,7 +64,7 @@
                 :compiler {:main portfolio.system
                            :output-to "resources/public/js/compiled/portfolio.js"
                            :output-dir "target"
-                           :closure-defines {portfolio.cdn/cdn-url "https://d3tnxt0x6lzwku.cloudfront.net/jakezerrerassets/%s"}
+                           :closure-defines {portfolio.cdn/cdn-url "https://d3tnxt0x6lzwku.cloudfront.net/%s"}
                            :source-map-timestamp true
                            :optimizations :advanced
                            :pretty-print false}}]}
