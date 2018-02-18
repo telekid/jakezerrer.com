@@ -24,35 +24,37 @@
    ;; There's probably a sexier way to write this, but I'm at a loss
    (apply conj [:div.project__images] content)])
 
-(defn example [wrapped-component caption]
-  [:div.project__image
-   [:figure
-    [:div.project__image-wrap wrapped-component]
-    [:figcaption.project__image-description caption]]])
+(defn example [wrapped-component caption width]
+  [:figure.project__example
+   {:class (gstring/format "project__example--%s" (name width))}
+   wrapped-component
+   [:figcaption.project__example-description caption]])
 
 (defn example-image [& {:keys [filename caption width]}]
-  (example [:img {:src (resource-url filename)
-                  :width width
-                  :alt caption}]
-           caption))
+  (example [:img.project__example-image {:src (resource-url filename)
+                                         :width width
+                                         :alt caption}]
+           caption
+           :auto))
 
 (defn example-video [& {:keys [filename caption]}]
-  (example [:iframe {:src (gstring/format "https://www.youtube.com/embed/%s?rel=0&amp;controls=0&amp;showinfo=0" filename)
-                     :alt caption
-                     :width 600
-                     :height 337
-                     :allowFullScreen true
-                     :frameBorder 0}]
-           caption))
+  (example [:div.project__aspect-wrap
+            [:iframe.project__example-video {:src (gstring/format "https://www.youtube.com/embed/%s?rel=0&controls=1&showinfo=0" filename)
+                                             :allowFullScreen true
+                                             :frameBorder 0}]]
+           caption
+           :wide))
 
 (defn intro [text] [:h1 text])
 
 (defn section [title] [:h1.project__section title])
 
-(defn description [text] [:p.project__description text])
+(defn subsection [title] [:h2.project__subsection title])
 
-(defn skills [skills] [:div.project__skills [:h1 "technologies used"]
-                       [:ul.project__skills-wrap (map-indexed (fn [idx skill] [:li.project__skill {:key idx} skill]) skills)]])
+(defn description [& content] (apply conj [:p.project__description] content))
+
+(defn skills [skills]
+  [:ul.project__skills (map-indexed (fn [idx skill] [:li.project__skill {:key idx} skill]) skills)])
 
 (defn portfolio []
   [:div
@@ -60,15 +62,21 @@
                  :show-nav true
                  :slug "untapt"
                  :description "untapt is a machine learning-driven hiring platform for software engineers."
-                 :content [(section "Resume Editor")
-                           (description "At untapt, I oversaw design and development
-                                   for two large SPAs. The first was a site that allowed
-                                   jobseekers to build a resume and apply to roles. The second was
-                                   a lightweight ATS that hiring managers used to review
+                 :content [(section "untapt")
+                           (description "At untapt, I oversaw design and development for two large web
+                                         applications used by over 30,000 software engineers and dozens
+                                         of technology companies.")
+                           (description "The first web app helped software engineers
+                                         build beautiful resumes and apply to technology roles.
+                                         The application leveraged ML to help candidates increase
+                                         their odds of landing a successful interview.")
+                           (description "The second application was a lightweight "
+                                   [:abbr {:title "Applicant Tracking System"} "ATS"]
+                                   " that hiring managers used to review and manage
                                    applications.")
-                           (skills ["AngularJS" "Figma" "Photoshop" "Marvel"])
-                           (section "Resume Editor")
-                           (description "A key feature of untapt is our Resume Editor. It
+                           (skills ["Figma" "Photoshop" "Marvel" "AngularJS"])
+                           (subsection "Resume Editor")
+                           (description "A key feature of the untapt candidate experience is the Resume Editor. It
                                          allows engineers to quickly build a resume that
                                          they can later send to companies.")
                            (description "The editor provides feedback to candidates to help
@@ -90,7 +98,7 @@
                                          you would like to change:")
                            (example-video :filename "aBUoGM_Z0kY"
                                           :caption "Example of automatic skill inference")
-                           (section "Hiring Manager Interface")
+                           (subsection "Hiring Manager Interface")
                            (description "")
                            (example-image :filename "manager-landing.png"
                                           :caption "Mockup of our marketing website for hiring managers"
@@ -104,7 +112,13 @@
         (company :name "vodka"
                  :slug "vodka"
                  :description "Custom iPad application for Broadway show \"Natasha, Pierre and the Great Comet of 1812\"."
-                 :content [(skills ["React Native" "Figma" "Swift"])
+                 :content [(section "Vodka")
+                           (description "Nick Pope, sound designer for the Broadway show "
+                                        [:i "Natasha, Pierre and the Great Comet of 1812,"]
+                                        " approached me to help him solve an unusual design
+                                          challenge.")
+
+                           (skills ["React Native" "Figma" "Swift"])
                            (example-image :filename "vodka-screenshot.jpg"
                                           :caption "Control surface for realtime two-dimensional audio placement"
                                           :width 450)])
@@ -112,6 +126,10 @@
                  :slug "refuge"
                  :description "App for finding, sharing and supporting new music."
                  :content [
+                           (section "Refuge")
+                           (description "Refuge was a side project that nearly snowballed into a startup.")
+                           (description "Though Refuge never left the design & prototyping phase, to date, it remains one of my most beloved projects.")
+
                            (skills ["Figma"])
                            (example-image :filename "refuge-landing.png"
                                           :caption "the refu.ge home page"
