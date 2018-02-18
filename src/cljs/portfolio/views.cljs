@@ -55,25 +55,9 @@
                        [:ul.project__skills-wrap (map-indexed (fn [idx skill] [:li.project__skill {:key idx} skill]) skills)]])
 
 (defn portfolio []
-  [:div (company :name "Refuge"
-                 :show-nav true
-                 :slug "refuge"
-                 :description "App for finding, sharing and supporting new music"
-                 :content [
-                           (skills ["Figma"])
-                           (example-image :filename "refuge-landing.png"
-                                          :caption "the refu.ge home page"
-                                          :width 600)
-                           (example-image :filename "refuge-live.png"
-                                          :caption "See what musical tastemakers are listening to"
-                                          :width 300)
-                           (example-image :filename "refuge-playback.png"
-                                          :caption "Simple playback interface"
-                                          :width 300)
-                           (example-image :filename "refuge-color-study.png"
-                                          :caption "Color study for Refuge"
-                                          :width 450)])
+  [:div
         (company :name "untapt"
+                 :show-nav true
                  :slug "untapt"
                  :description "untapt is a machine learning-driven hiring platform for software engineers."
                  :content [(section "Resume Editor")
@@ -123,6 +107,23 @@
                  :content [(skills ["React Native" "Figma" "Swift"])
                            (example-image :filename "vodka-screenshot.jpg"
                                           :caption "Control surface for realtime two-dimensional audio placement"
+                                          :width 450)])
+        (company :name "Refuge"
+                 :slug "refuge"
+                 :description "App for finding, sharing and supporting new music."
+                 :content [
+                           (skills ["Figma"])
+                           (example-image :filename "refuge-landing.png"
+                                          :caption "the refu.ge home page"
+                                          :width 600)
+                           (example-image :filename "refuge-live.png"
+                                          :caption "See what musical tastemakers are listening to"
+                                          :width 300)
+                           (example-image :filename "refuge-playback.png"
+                                          :caption "Simple playback interface"
+                                          :width 300)
+                           (example-image :filename "refuge-color-study.png"
+                                          :caption "Color study for Refuge"
                                           :width 450)])])
 
 
