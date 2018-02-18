@@ -197,11 +197,11 @@ figure {
 }
 
 .project__description {
-    margin: 8px 0 16px;
+    margin-bottom: 16px;
 }
 
-.project__section {
-    margin: 8px 0 16px;
+* + .project__section {
+    margin-top: 16px;
 }
 
 .project__image {
@@ -218,16 +218,15 @@ figure {
     }
 }
 
-.project__skills-wrap {
+.project__skills {
     display: flex;
     flex-direction: column;
     padding: 8px 16px;
-    margin: 16px 0;
-    border-radius: 6px;
-    background: #eee;
+    margin-bottom: 16px;
+    background: #f3f3f3;
 }
 
-.project__skills {
+.project__skills-wrap {
     display: flex;
 }
 

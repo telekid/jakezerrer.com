@@ -1,12 +1,13 @@
 (ns portfolio.views
   (:require [re-frame.core :as re-frame]
             [goog.string :as gstring]
+            [portfolio.cdn :refer [resource-url]]
             [goog.string.format]))
 
 (declare portfolio)
 
 (defn main-panel []
-  (portfolio))
+  [:div.container [:div.portfolio (portfolio)]])
 
 (defn home [])
 
@@ -30,7 +31,7 @@
     [:figcaption.project__image-description caption]]])
 
 (defn example-image [& {:keys [filename caption width]}]
-  (example [:img {:src (gstring/format "/img/portfolio/%s" filename)
+  (example [:img {:src (resource-url filename)
                   :width width
                   :alt caption}]
            caption))
@@ -50,8 +51,8 @@
 
 (defn description [text] [:p.project__description text])
 
-(defn skills [skills] [:div.project__skills-wrap [:h1 "technologies used"]
-                       [:ul.project__skills (map (fn [skill] [:li.project__skill skill]) skills)]])
+(defn skills [skills] [:div.project__skills [:h1 "technologies used"]
+                       [:ul.project__skills-wrap (map (fn [skill] [:li.project__skill skill]) skills)]])
 
 (defn portfolio []
   [:div (company :name "Refuge"
@@ -59,7 +60,7 @@
                  :slug "refuge"
                  :description "App for finding, sharing and supporting new music"
                  :content [
-                           (skills ["Figma"])
+                           (skills ["Figmaaaa"])
                            (example-image :filename "refuge-landing.png"
                                           :caption "the refu.ge home page"
                                           :width 600)
@@ -75,7 +76,8 @@
         (company :name "untapt"
                  :slug "untapt"
                  :description "untapt is a machine learning-driven hiring platform for software engineers."
-                 :content [(intro "At untapt, I oversaw design and development
+                 :content [(section "Resume Editor")
+                           (description "At untapt, I oversaw design and development
                                    for two large SPAs. The first was a site that allowed
                                    jobseekers to build a resume and apply to roles. The second was
                                    a lightweight ATS that hiring managers used to review
