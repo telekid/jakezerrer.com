@@ -109,20 +109,6 @@
                                          details about their experience with specific skills:")
                            (example-video :filename "1Mi-tY-Vchc"
                                           :caption "Resume Recommendations")])
-                           ;; (subsection "Hiring Manager Interface")
-                           ;; (description "The "
-                           ;;              [:i "Hiring Manager Interface"])
-                           ;;              " "
-
-                           ;; (example-image :filename "manager-landing.png"
-                           ;;                :caption "Mockup of our marketing website for hiring managers"
-                           ;;                :width 600)
-                           ;; (example-image :filename "manager-pipeline.png"
-                           ;;                :caption "Interface for quickly navigating through job applications"
-                           ;;                :width 600)
-                           ;; (example-image :filename "resume-versions.png"
-                           ;;                :caption "Resume editor, showing users' ability to manage multiple resumes"
-                           ;;                :width 600)])
         (company :name "vodka"
                  :slug "vodka"
                  :description "Custom iPad application for Broadway show \"Natasha, Pierre and the Great Comet of 1812\"."
@@ -188,18 +174,4 @@
                                           "Invision Prototype"]
                                          ".")
                            (skills ["Figma", "Invision"])])])
-                           ;; (subsection "Selected Prototype Screenshots")
-                           ;; (description "Early Refuge prototyping took place during a rapid ")])])
-                           ;; (example-image :filename "refuge-landing.png"
-                           ;;                :caption "the refu.ge home page"
-                           ;;                :width 600)
-                           ;; (example-image :filename "refuge-live.png"
-                           ;;                :caption "See what musical tastemakers are listening to"
-                           ;;                :width 300)
-                           ;; (example-image :filename "refuge-playback.png"
-                           ;;                :caption "Simple playback interface"
-                           ;;                :width 300)
-                           ;; (example-image :filename "refuge-color-study.png"
-                           ;;                :caption "Color study for Refuge"
-                           ;;                :width 450)])])
 
