@@ -78,11 +78,13 @@
                            (description "At untapt, I oversaw design and development for two large web
                                          applications used by over 30,000 software engineers and dozens
                                          of technology companies.")
-                           (description "The "
+                           (description "The first app was called the "
                                         [:i "Candidate Interface"]
-                                        " app helped software engineers
+                                        ". It allowed software engineers to
                                          build beautiful resumes and apply to technology roles.
-                                         The application leveraged ML to help candidates increase
+                                         The application leveraged "
+                                        [:abbr {:title "Machine Learning"} "ML"]
+                                        " to help candidates increase
                                          their odds of landing a successful interview.")
                            (description "The second application was a lightweight "
                                    [:abbr {:title "Applicant Tracking System"} "ATS"]
@@ -92,27 +94,18 @@
                                    " was designed with ease-of-use and rapid review in mind.")
                            (skills ["Figma" "Photoshop" "Marvel" "AngularJS"])
                            (subsection "Resume Editor")
-                           (description "When designing the editor, we focused
-                                         on making editing quick and intuitive. Editing a
-                                         section is as easy as clicking on the content that
-                                         you would like to change:")
-                           (example-video :filename "aBUoGM_Z0kY"
-                                          :caption "Example of automatic skill inference")
-                           (description "A key feature of the " [:i "Candidate Experience"]
-                                        " was the Resume Editor. It
-                                         allows engineers to quickly build a resume that
-                                         they can later send to companies.")
-                           (description "The editor provides feedback to candidates to help
-                                         them ensure their resume is fit for the role they are
-                                         applying to. Here, it suggests that I should add
-                                         details about my experience with specific skills:")
+                           (description "When designing the editor, I focused
+                                         on making editing quick and intuitive. To edit your resume, candidate would simply click on the content they wished to update. That would open up the editor panel, where they would make their changes:")
                            (example-video :filename "AsLC9LyFMPs"
                                           :caption "Quick Editing")
-                           (description "For various reasons, we decided to automatically
-                                         infer candidates' technology skills from the content
-                                         of their resumes, rather than having them list them
-                                         manually. Skills required by a specific role are
-                                         highlighted in orange:")
+                           (description "Rather than requiring candidates to list skills out manually, we decided to build a "
+                                        [:abbr {:title "Named Entity Recognition"} "NER"]
+                                        " system that automatically identified skills mentioned in the body of the resume. Here, you'll notice that the skill \"React\" is automatically identified:")
+                           (example-video :filename "aBUoGM_Z0kY"
+                                          :caption "Example of automatic skill inference")
+                           (description "The editor provides feedback to help candidates ensure their resume seems appropriate for the role they are
+                                         applying to. Here, it suggests that I should add
+                                         details about my experience with specific skills:")
                            (example-video :filename "1Mi-tY-Vchc"
                                           :caption "Resume Recommendations")])
                            ;; (subsection "Hiring Manager Interface")
@@ -164,7 +157,7 @@
                            (description "To learn more about Refuge, check out the "
                                          [:a {:href "https://paper.dropbox.com/doc/Refuge-Overview-for-YC-R61kLiZFtC1MiOzmxPNjM"}
                                           "Y Combinator Pitch Document"]
-                                         " (note: may have trouble loading) and a sample "
+                                         " (note: large document, some sections have trouble loading) and a sample "
                                          [:a {:href "https://projects.invisionapp.com/share/RBF07PMDY#/screens/269781422_Live_Feed"}
                                           "Invision Prototype"]
                                          ".")
