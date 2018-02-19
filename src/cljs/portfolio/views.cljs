@@ -26,7 +26,7 @@
    [:div.project__overview-wrap
     (when show-nav
       [:nav.project__nav
-       [:h1 "Portfolioooooo"]
+       [:h1 "Portfolioooooo cat"]
        [:a {:href "/"} "return home"]])
     [:div.project__overview
       [:h1.project__company-header name]

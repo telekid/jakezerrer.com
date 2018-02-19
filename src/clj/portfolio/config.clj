@@ -6,6 +6,7 @@
 
 (defn config []
   {:http-port  (Integer. (or (env :port) 10555))
-   :middleware [[wrap-defaults site-defaults]
+   :middleware [[wrap-defaults (-> site-defaults
+                                   (assoc-in [:responses :not-modified-responses] false))]
                 wrap-with-logger
                 wrap-gzip]})
