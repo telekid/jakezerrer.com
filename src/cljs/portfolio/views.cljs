@@ -158,12 +158,12 @@
                                          help artists build a brand and gain exposure without the help of a
                                          record label.")
                            (description "Though Refuge never left the design & prototyping phase, to date, it remains one of my most beloved projects.")
-                           (description "To learn more about Refuge, check out our "
-                                         [:a {:href "https://paper.dropbox.com/doc/Refuge-Overview-for-YC-R61kLiZFtC1MiOzmxPNjM"}]
-                                         "Y Combinator Pitch Document"
-                                         "(note: may have trouble loading) and a sample "
-                                         [:a {:href "https://projects.invisionapp.com/share/RBF07PMDY#/screens/269781422_Live_Feed"}]
-                                         "Invision Prototype"
+                           (description "To learn more about Refuge, check out the "
+                                         [:a {:href "https://paper.dropbox.com/doc/Refuge-Overview-for-YC-R61kLiZFtC1MiOzmxPNjM"}
+                                          "Y Combinator Pitch Document"]
+                                         " (note: may have trouble loading) and a sample "
+                                         [:a {:href "https://projects.invisionapp.com/share/RBF07PMDY#/screens/269781422_Live_Feed"}
+                                          "Invision Prototype"]
                                          ".")
                            (skills ["Figma", "Invision"])])])
                            ;; (subsection "Selected Prototype Screenshots")
