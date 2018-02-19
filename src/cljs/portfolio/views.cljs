@@ -8,7 +8,8 @@
 (declare portfolio home)
 
 (defn main-panel []
-  [:div.container (home) (portfolio)])
+  ;; [:div.container (home) (portfolio)]
+  [:div.container (portfolio)])
 
 (defn home []
   [:div.home__wrap
@@ -26,7 +27,9 @@
    [:div.project__overview-wrap
     (when show-nav
       [:nav.project__nav
-       [:h1 "Portfolio"]])
+       [:h1 "Jake Zerrer"]
+       [:p "Hi, I'm Jake. I'm a code-literate product designer. I turn complex ideas into simple things."]
+       [:p "This is my portfolio. Enjoy!"]])
     [:div.project__overview
       [:h1.project__company-header name]
       [:p.project__company-description description]]]

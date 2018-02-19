@@ -88,7 +88,7 @@ figure {
     margin-top: 100px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 950px) {
     .portfolio {
         margin-top: 0;
     }
@@ -102,7 +102,7 @@ figure {
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 950px) {
     .project {
         flex-direction: column;
         margin-bottom: 32px;
@@ -120,11 +120,15 @@ figure {
     margin-bottom: 200px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 950px) {
     .project__overview-wrap {
         text-align: left;
         width: 100%;
         margin-bottom: 0;
+    }
+
+    .project__overview {
+        display: none;
     }
 }
 
@@ -136,19 +140,33 @@ figure {
     padding: 8px 16px;
     margin-right: -16px;
     margin-bottom: 32px;
+    margin-top: -8px;
 }
 
-
-@media (max-width: 600px) {
-    .project__nav {
-        margin: 0;
-        align-items: flex-start;
-    }
+.project__nav p {
+    font-weight: 300;
+    margin-bottom: 10px;
 }
 
 .project__nav h1 {
+    margin-bottom: 0;
+    font-size: 20px;
     color: #333;
-    margin-bottom: 6px;
+}
+
+@media (max-width: 950px) {
+    .project__nav {
+        margin: 0 auto;
+        box-sizing: border-box;
+        align-items: flex-start;
+        background: transparent;
+        max-width: 600px;
+        padding: 16px;
+    }
+
+    .project__overview-wrap {
+        background: #f3f3f3;
+    }
 }
 
 .project__nav a {
@@ -168,7 +186,7 @@ figure {
     align-self: flex-start;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 950px) {
     .project__overview {
         padding: 16px;
     }
@@ -190,10 +208,12 @@ figure {
     align-items: flex-start;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 950px) {
     .project__images {
-        width: 100%;
-        padding: 0;
+        max-width: 100%;
+        padding: 20px;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 }
 
@@ -245,10 +265,17 @@ figure {
     margin-right: -50px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 950px) {
     .project__example {
-        padding: 32px;
-        margin-bottom: 0;
+        margin: 32px 0;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .project__example-image {
+
+        max-width: 100%;
+
     }
 }
 
@@ -279,7 +306,7 @@ figure {
     position: relative;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 950px) {
     .project__example project__example-image {
         width: 100%;
     }
