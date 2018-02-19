@@ -94,6 +94,7 @@
                                    " was designed with simplicity and rapid review in mind.")
                            (skills ["Figma" "Photoshop" "Marvel" "AngularJS"])
                            (subsection "Resume Editor")
+                           (description "Though I worked on dozens of initiatives during my three year tenure at untapt, my favorite design and engineering project was definitely our resume editor.")
                            (description "When designing the editor, I focused
                                          on making changes quick and intuitive. To edit their resume, the candidate simply clicks on the content they wish to update. That opens an editor panel, where they can enter their changes:")
                            (example-video :filename "AsLC9LyFMPs"
