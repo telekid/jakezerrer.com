@@ -75,10 +75,10 @@
                  :slug "untapt"
                  :description "untapt is a machine learning-driven hiring platform for software engineers."
                  :content [(section "untapt")
-                           (description "At untapt, I oversaw design and development for two large web
+                           (description "At untapt, I led design and development for two large web
                                          applications used by over 30,000 software engineers and dozens
                                          of technology companies.")
-                           (description "The first app was called the "
+                           (description "The first app was the "
                                         [:i "Candidate Interface"]
                                         ". It allowed software engineers to
                                          build beautiful resumes and apply to technology roles.
@@ -91,21 +91,21 @@
                                    " that hiring managers used to review and manage
                                    job applications. This "
                                    [:i "Manager Interface"]
-                                   " was designed with ease-of-use and rapid review in mind.")
+                                   " was designed with simplicity and rapid review in mind.")
                            (skills ["Figma" "Photoshop" "Marvel" "AngularJS"])
                            (subsection "Resume Editor")
                            (description "When designing the editor, I focused
-                                         on making editing quick and intuitive. To edit your resume, candidate would simply click on the content they wished to update. That would open up the editor panel, where they would make their changes:")
+                                         on making changes quick and intuitive. To edit their resume, the candidate simply clicks on the content they wish to update. That opens an editor panel, where they can enter their changes:")
                            (example-video :filename "AsLC9LyFMPs"
                                           :caption "Quick Editing")
-                           (description "Rather than requiring candidates to list skills out manually, we decided to build a "
+                           (description "Rather than requiring candidates to list skills manually, we decided to build a "
                                         [:abbr {:title "Named Entity Recognition"} "NER"]
-                                        " system that automatically identified skills mentioned in the body of the resume. Here, you'll notice that the skill \"React\" is automatically identified:")
+                                        " system that automatically identified skills mentioned in the body of the resume. Here, note that the skill \"React\" is automatically identified:")
                            (example-video :filename "aBUoGM_Z0kY"
                                           :caption "Example of automatic skill inference")
-                           (description "The editor provides feedback to help candidates ensure their resume seems appropriate for the role they are
-                                         applying to. Here, it suggests that I should add
-                                         details about my experience with specific skills:")
+                           (description "The editor provides feedback to help candidates ensure their resume is appropriate for the role they are
+                                         applying to. Here, it suggests that they should add
+                                         details about their experience with specific skills:")
                            (example-video :filename "1Mi-tY-Vchc"
                                           :caption "Resume Recommendations")])
                            ;; (subsection "Hiring Manager Interface")
@@ -129,7 +129,7 @@
                            (description "Nick Pope, sound designer for the Broadway show "
                                         [:i "Natasha, Pierre and the Great Comet of 1812,"]
                                         " approached me to help him solve an unusual design
-                                        problem.")
+                                        problem: what's the best way to pan sound two dimensionally around a theater?")
                            (description "Unlike most Broadway shows, the actors in "
                                         [:i "Great Comet"]
                                         " moved not only on stage, but around the audience. Nick needed
@@ -139,10 +139,35 @@
                                          take care of the actual audio computations (like panning and summing),
                                          the native software interface was too cumbersome to allow them make
                                          changes quickly.")
+                           (description "To read more about Nick's experience with Vodka, check out "
+                                        [:a {:href ""} "this interview"]
+                                        ".")
                            (skills ["React Native" "Figma" "Swift"])
                            (example-image :filename "vodka-screenshot.jpg"
                                           :caption "Control surface for realtime two-dimensional audio placement"
-                                          :width 450)])
+                                          :width 450)
+                           (description "Vodka served as a multitouch front-end to Meyer Sound's CueStation software.
+                                         The interface was fairly simple; it showed the positions of actors overlaid
+                                         upon a groundplan of the theater. An operator could use their fingers to drag
+                                         actor symbols around across the groundplan. Vodka would communicate those positional
+                                         changes to CueStation via "
+                                        [:abbr {:title "Open Sound Control"} "OSC"]
+                                        ", and then CueStation would manage the panning of the audio.")
+                           (description "Here, you can see two characters (Natasha and Pierre) move across the
+                                         groundplan displayed in Vodka on an iPad simulator. In the background,
+                                         you can see the audio server reflecting those changes in real time:")
+                           (example-video :filename "RoLmiUkNmZY"
+                                          :caption "Vodka trajectory simulation")
+                           (description "It was critical to minimize the risk that any malfunction within Vodka
+                                         would disrupt the production. To facilitate this, we chose to offload all
+                                         state management to the audio server. Any change to state on either Vodka
+                                         or the server would be immediately forwarded to the other party.")
+                           (description "The following video demonstrates this bidirectional communication. Here,
+                                         we rename buses on the server, and then those changes are immediately
+                                         reflected in Vodka:")
+                           (example-video :filename "wta_Qli0BZ4"
+                                          :caption "Vodka bus naming")])
+
         (company :name "Refuge"
                  :slug "refuge"
                  :description "App for finding, sharing and supporting new music."
