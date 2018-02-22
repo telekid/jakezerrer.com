@@ -17,7 +17,7 @@
                  [org.danielsz/system "0.4.0"]
                  [org.clojure/tools.namespace "0.2.11"]
                  [http-kit "2.2.0"]
-                 [re-frame "0.9.4"]]
+                 [re-frame "0.10.5"]]
 
   :plugins [[lein-cljsbuild "1.1.6"]
             [lein-environ "1.1.0"]]
@@ -50,7 +50,10 @@
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/portfolio.js"
                            :output-dir "resources/public/js/compiled/out"
-                           :source-map-timestamp true}}
+                           :source-map-timestamp true
+                           :closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}
+                           :preloads [day8.re-frame.trace.preload]}}
+                           ;; :preloads [day8.re-frame-10x.preload]}}
 
                {:id "test"
                 :source-paths ["src/cljs" "test/cljs" "src/cljc" "test/cljc"]
@@ -104,6 +107,8 @@
                              [com.cemerick/piggieback "0.2.2"]
                              [org.clojure/tools.nrepl "0.2.13"]
                              [lein-doo "0.1.7"]
+                             [day8.re-frame/trace "0.1.22"]
+                             ;; [day8.re-frame/re-frame-10x "0.2.0-react16"]
                              [reloaded.repl "0.2.3"]]
 
               :plugins [[lein-figwheel "0.5.11"]
