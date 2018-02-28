@@ -1,3 +1,3 @@
 (ns portfolio.db)
 
-(def default-db {:location nil})
+(def default-db {:location {:handler :home}})
