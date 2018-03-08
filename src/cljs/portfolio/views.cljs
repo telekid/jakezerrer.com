@@ -6,8 +6,10 @@
             [portfolio.views.pages.home :refer [home]]))
 
 (defn main-panel []
-  (let [page (subscribe [:page])]
+  (let [location (subscribe [:location])]
     [:div.container
      (utils/page-case
-      @page {:portfolio portfolio :home home})]))
+      @location {:portfolio portfolio
+                 :home home
+                 :not-found (fn [] [:div "not found"])})]))
 

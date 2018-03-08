@@ -5,8 +5,8 @@
             [ring.util.response :refer [response]]))
 
 (defn home-routes [endpoint]
-  (routes
-   (GET "/" _
+ (routes
+   (GET "*" _
      (-> "public/index.html"
          io/resource
          io/input-stream

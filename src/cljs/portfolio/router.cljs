@@ -1,7 +1,15 @@
 (ns portfolio.router
-  (:require [bidi.router :refer [start-router!]]
-            [bidi.bidi :refer [path-for]]
+  (:require [accountant.core :as accountant]
+            [bidi.bidi :refer [path-for match-route]]
             [re-frame.core :refer [dispatch subscribe]]))
+
+(declare routes)
+
+(defn start []
+  (accountant/configure-navigation!
+   {:nav-handler #(dispatch [:navigate (match-route routes %)])
+    :path-exists? #(boolean (match-route routes %))})
+  (accountant/dispatch-current!))
 
 (def routes
   ["" {"/portfolio"
@@ -11,18 +19,6 @@
        "/" :home
        true :not-found}])
 
-
-(defn route-ancestry [routes route]
-  ;; (loop [history [] branch routes]
-  (let [to-search (take-nth 1 routes)]
-    to-search))
-      ;; (if (equals (type branch) cljs.core/PersistentArrayMap)
-        ;; (recur)))
-
-(route-ancestry routes :home)
-
-(let [router (start-router! routes {:on-navigate #(dispatch [:navigate %])})])
-
 (defn link
   ([route]
    (path-for routes route))
@@ -31,5 +27,6 @@
 
 (defn link-for
   "Generate a URL path for a given route."
-  ([route] (str "#" (link route)))
-  ([route params] (str "#" (link route params))))
+  ;; TODO Remove hard-coded link URLs
+  ([route] (str "http://localhost:10555" (link route)))
+  ([route params] (str "http://localhost:10555" (link route params))))

@@ -11,11 +11,3 @@
  :location
  (fn [db]
    (:handler (:location db))))
-
-(re-frame/reg-sub
- :page
- :<- [:location]
- (fn [location]
-   (case location
-     :portfolio :portfolio
-     :home :home)))

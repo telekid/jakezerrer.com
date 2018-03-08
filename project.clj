@@ -18,6 +18,7 @@
                  [org.clojure/tools.namespace "0.2.11"]
                  [bidi "2.1.3"]
                  [http-kit "2.2.0"]
+                 [venantius/accountant "0.2.4"]
                  [re-frame "0.10.5"]]
 
   :plugins [[lein-cljsbuild "1.1.6"]

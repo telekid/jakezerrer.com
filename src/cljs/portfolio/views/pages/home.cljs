@@ -9,7 +9,6 @@
      [:ul
       [:li [:a {:href (link-for :home)} "Home"]]
       [:li [:a {:href (link-for :portfolio)} "Portfolio"]]
-      [:li [:a {:href (link-for :portfolio-entry {:portfolio-entry-id 123})} "Portfolio entry"]]
-      [:li [:a {:href "https://www.linkedin.com/in/jakezerrer/"} "linkedin"]]
-      [:li [:a {:href "https://www.instagram.com/telekid/"} "instagram"]]
-      [:li [:a {:href "https://github.com/telekid"} "github"]]]]]])
+      [:li [:a {:href "https://www.linkedin.com/in/jakezerrer/"} "LinkedIn"]]
+      [:li [:a {:href "https://www.instagram.com/telekid/"} "Instagram"]]
+      [:li [:a {:href "https://github.com/telekid"} "Github"]]]]]])
