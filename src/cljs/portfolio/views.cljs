@@ -173,5 +173,11 @@
                                          [:a {:href "https://projects.invisionapp.com/share/RBF07PMDY#/screens/269781422_Live_Feed"}
                                           "Invision Prototype"]
                                          ".")
-                           (skills ["Figma", "Invision"])])])
+                           (skills ["Figma", "Invision"])
+                           [:div.project__prototype-wrap
+                            [:iframe.project__prototype {:width "438"
+                                                         :height "930"
+                                                         :src "//invis.io/FEF8LERM5"
+                                                         :frameborder 0
+                                                         :allowFullScreen true}]]])])
 

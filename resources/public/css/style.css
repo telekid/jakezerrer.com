@@ -297,6 +297,19 @@ figure {
     font-size: 12px;
 }
 
+.project__prototype-wrap {
+    margin-top: 16px;
+    width: 328.5px;
+    height: 658.5px;
+    overflow: hidden;
+}
+
+.project__prototype {
+    border: none;
+    transform: scale(0.75);
+    transform-origin: top left;
+}
+
 .project__example-video {
     position: absolute;
     width: 100%;
