@@ -94,6 +94,45 @@ figure {
     }
 }
 
+.project__process-box {
+    width: 100%;
+    margin: 16px 0;
+    color: #333;
+}
+
+.project__process-box ol {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    counter-reset: process-box;
+}
+
+
+.project__process-box li {
+    width: 50%;
+    flex: 1 0 auto;
+    counter-increment: process-box;
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.project__process-box li:before {
+    margin-right: 12px;
+    content: counter(process-box);
+    background: #eaeaea;
+    color: white;
+    width: 26px;
+    height: 26px;
+    display: block;
+    text-align: center;
+    border-radius: 3px;
+    color: #949494;
+}
+
 .project {
     display: flex;
     justify-content: center;
@@ -224,6 +263,10 @@ figure {
 .project__description {
     color: #333;
     margin-bottom: 16px;
+}
+
+.project__description:last-child {
+    margin-bottom: 64px;
 }
 
 .project__section {

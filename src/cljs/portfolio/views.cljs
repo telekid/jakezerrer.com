@@ -70,8 +70,27 @@
 
 (defn portfolio []
   [:div.portfolio
+        (company :show-nav true
+                 :content [(section "Standard Approach")
+                           (description "My approach to design is a direct byproduct of my multidisciplinary background. My experience designing for theater impressed upon me the importance of storytelling and empathy in any design process; and my technical background has fostered a methodology defined by logic and empiricism.")
+                           (description "More formally, my standard approach to any new problem looks something like this:")
+                           [:div.project__process-box
+                            [:ol
+                             [:li "Definition"]
+                             [:li "Research"]
+                             [:li "Divergent Thinking"]
+                             [:li "Convergent Thinking"]]]
+                           (subsection "Definition")
+                           (description "During the definition stage, I work with collaborators to define and contextualize the problem (or product.) What are we setting out to do? Why? How will we measure our results?")
+                           (subsection "Research")
+                           (description "The research process varies heavily from project to project. Some projects demand a long, formal research process; others, simple exercises in empathy building. What can we learn about its users? What about its environment? Its competitive landscape?")
+                           (description "Formal processes like User Personas and Journey Maps may be useful. Selecting the right methodology is as important as the research itself.")
+                           (subsection "Divergent Thinking")
+                           (description "Creativity, chaos, and play all converge here. This step is similar to brainstorming; it is the exploration of our problem space. Ideas proliferate - good and bad - ready to be whittled down in the final step.")
+                           (subsection "Convergent Thinking")
+                           (description "Convergence synthesizes the results of Research and Divergence into a product.")])
+
         (company :name "untapt"
-                 :show-nav true
                  :slug "untapt"
                  :description "untapt is a machine learning-driven hiring platform for software engineers."
                  :content [(section "untapt")
@@ -169,15 +188,14 @@
                            (description "To learn more about Refuge, check out the "
                                          [:a {:href "https://paper.dropbox.com/doc/Refuge-Overview-for-YC-R61kLiZFtC1MiOzmxPNjM"}
                                           "Y Combinator Pitch Document"]
-                                         " (note: large document, some sections have trouble loading) and a sample "
-                                         [:a {:href "https://projects.invisionapp.com/share/RBF07PMDY#/screens/269781422_Live_Feed"}
-                                          "Invision Prototype"]
-                                         ".")
+                                         " (note: large document, some sections have trouble loading.)")
                            (skills ["Figma", "Invision"])
+                           (subsection "Invision Prototype")
+                           (description "To get a feel for Refuge, feel free to play around with the following " [:a {:href "https://projects.invisionapp.com/share/RBF07PMDY#/screens/269781422_Live_Feed"} "Invision Prototype"] ".")
                            [:div.project__prototype-wrap
                             [:iframe.project__prototype {:width "438"
                                                          :height "930"
                                                          :src "//invis.io/FEF8LERM5"
-                                                         :frameborder 0
+                                                         :frameBorder 0
                                                          :allowFullScreen true}]]])])
 
