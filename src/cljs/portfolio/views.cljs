@@ -146,7 +146,7 @@
                                          the native software interface was too cumbersome to allow them make
                                          changes quickly.")
                            (description "To read more about Nick's experience with Vodka, check out "
-                                        [:a {:href ""} "this interview"]
+                                        [:a {:href "http://www.livedesignonline.com/webcasts/demand-sound-design-natasha-pierre-nicholas-pope"} "this interview"]
                                         ".")
                            (skills ["React Native" "Figma" "Swift"])
                            (example-image :filename "vodka-screenshot.jpg"
