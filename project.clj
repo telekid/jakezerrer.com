@@ -16,7 +16,7 @@
                  [com.stuartsierra/component "0.3.2"]
                  [org.danielsz/system "0.4.0"]
                  [org.clojure/tools.namespace "0.2.11"]
-                 [bidi "2.1.3"]
+                 [org.clojars.hz/bidi "2.1.2-SNAPSHOT"]
                  [http-kit "2.2.0"]
                  [venantius/accountant "0.2.4"]
                  [re-frame "0.10.5"]]
