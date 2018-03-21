@@ -1,23 +1,15 @@
 (ns portfolio.router
   (:require [accountant.core :as accountant]
+            [portfolio.route-definitions :refer [routes]]
             [bidi.bidi :refer [path-for match-route]]
             [re-frame.core :refer [dispatch subscribe]]))
 
-(declare routes)
 
 (defn start []
   (accountant/configure-navigation!
    {:nav-handler #(dispatch [:navigate (match-route routes %)])
     :path-exists? #(boolean (match-route routes %))})
   (accountant/dispatch-current!))
-
-(def routes
-  ["" {"/portfolio"
-       {"" :portfolio
-        ["/" :portfolio-entry-id] :portfolio-entry}
-       "" :home
-       "/" :home
-       true :not-found}])
 
 (defn link
   ([route]
