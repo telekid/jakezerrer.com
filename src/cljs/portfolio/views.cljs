@@ -18,6 +18,9 @@
        :notes (fn [] [:div "Notes"])
        :notes-entry (fn [params]
                       [:div "Notes Entry" (:id params)])
-       :not-found (fn [] [:div "not found"])}
+       :not-found (fn [] [:div "not found"])
+       ;; TODO Figure out how to handle server-side routes that
+       ;; exist, just not on the client
+       :static (fn [] [:div "Not found"])}
       @route-params)]))
 

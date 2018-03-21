@@ -7,16 +7,24 @@
             [ring.util.response :refer [response]])
   (:import [bidi.ring Resources]))
 
-(defn serve-spa [request]
+(defn get-spa []
+  "Get the index file for the SPA from the filesystem."
   (-> "public/index.html"
       io/resource
-      io/input-stream
+      io/input-stream))
+
+(defn not-found [request]
+  {:status 404})
+
+(defn serve-spa [request]
+  (-> (get-spa)
       response
-      (assoc :headers {"Content-Type" "text/html; charset=utf-8"})))
+      (assoc-in [:headers "Content-Type"] "text/html; charset=utf-8")))
 
 (defn handler-lookup [route]
-  (if (= :static route)
-    (->Resources {:prefix ""})
+  (case route
+    :not-found not-found
+    :static (->Resources {:prefix ""})
     serve-spa))
 
 (defn home-routes [endpoint]
