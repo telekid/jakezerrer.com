@@ -49,7 +49,7 @@
                 :figwheel {:on-jsload "portfolio.system/reset"}
 
                 :compiler {:main cljs.user
-                           :asset-path "js/compiled/out"
+                           :asset-path "/public/js/compiled/out"
                            :output-to "resources/public/js/compiled/portfolio.js"
                            :output-dir "resources/public/js/compiled/out"
                            :source-map-timestamp true
