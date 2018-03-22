@@ -3,22 +3,22 @@
             [goog.string :as gstring]
             [portfolio.cdn :refer [resource-url]]
             [re-frame.core :refer [subscribe]]
+            [portfolio.views.components :refer [site-header
+                                                site-header-spacer
+                                                page-wrap
+                                                site-footer
+                                                <>
+                                                center-page]]
             [goog.string.format]))
 
 
 (defn company [& {:keys [name slug description content show-nav] :or {show-nav false}}]
-  [:div.project
-   [:div.project__overview-wrap
-    (when show-nav
-      [:nav.project__nav
-       [:h1 "Jake Zerrer"]
-       [:p "Hi, I'm Jake. I'm a code-literate product designer. I turn complex ideas into simple things."]
-       [:p "This is my portfolio. Enjoy!"]])
-    [:div.project__overview
-      [:h1.project__company-header name]
-      [:p.project__company-description description]]]
-   ;; There's probably a sexier way to write this, but I'm at a loss
-   (apply conj [:div.project__images] content)])
+  [:div.portfolio-entry
+   [:div.portfolio-entry__wrap
+    [site-header-spacer]
+    (into [center-page {}]
+          content)]
+   [site-footer]])
 
 (defn example [wrapped-component caption width]
   [:figure.project__example
@@ -44,14 +44,14 @@
          caption :caption}
         ;; TODO this isn't a good way to do this
         (first content)]
-    (example [:div.project__aspect-wrap
+    [example [:div.project__aspect-wrap
               [:iframe.project__example-video {:src (gstring/format "https://www.youtube.com/embed/%s?rel=0&controls=1&showinfo=0" filename)}
                                               :allowFullScreen true
                                               :frameBorder 0]]
             caption
-            :wide)))
+            :wide]))
 
-(defn intro [text] [:h1 text])
+(defn intro [text] [:h1.portfolio-entry__intro text])
 
 (defn section [title] [:h1.project__section title])
 
@@ -62,9 +62,7 @@
 (defn skills [& skills]
   [:ul.project__skills (map-indexed (fn [idx skill] [:li.project__skill {:key idx} skill]) skills)])
 
-(def test-db [[:description "Test description"]
-              [:p "Some elem"]])
-
+;; TODO Make render-with accept a map of keys to functions
 (defn render-with [content]
   (map-indexed
    (fn [idx elem]
@@ -76,19 +74,16 @@
                            :subsection subsection
                            :example-image example-image
                            :example-video example-video
+                           :intro intro
                            ;; Throw error
                            (fn [c] [:div c]))
                          elem-body)
          {:key idx})))
    content))
 
-(render-with test-db)
-
 (defn portfolio-entry []
   (let [entry (subscribe [:current-portfolio-entry])]
     [:div.portfolio
-        (company :name (:name @entry)
-                 :show-nav true
-                 ;; TODO description could be another sub
+        [company :name (:name @entry)
                  :description (:description @entry)
-                 :content (render-with (:content @entry)))]))
+                 :content (render-with (:content @entry))]]))

@@ -26,8 +26,8 @@
    (when (= location :portfolio-entry)
      ((keyword (:id route-params)) portfolio-entries))))
 
-;; (re-frame/reg-sub
-;;  :current-portfolio-name
-;;  :<- [:current-portfolio-entry]
-;;  (fn [[entry] _]
-;;    (print "entry" entry)))
+(re-frame/reg-sub
+ :header-visible
+ :<- [:location]
+ (fn [location _]
+  (not (= location :home))))

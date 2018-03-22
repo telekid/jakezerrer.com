@@ -5,6 +5,7 @@
             [clojure.tools.logging :as log]
             [portfolio.route-definitions :refer [routes] :rename {routes route-definitions}]
             [ring.util.response :refer [response]])
+  ;; TODO I don't think this needs to be here
   (:import [bidi.ring Resources]))
 
 (defn get-spa []

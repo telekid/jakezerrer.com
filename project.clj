@@ -19,7 +19,9 @@
                  [org.clojars.hz/bidi "2.1.2-SNAPSHOT"]
                  [http-kit "2.2.0"]
                  [venantius/accountant "0.2.4"]
-                 [re-frame "0.10.5"]]
+                 [cljsjs/react "16.2.0-3"]
+                 [cljsjs/react-dom "16.2.0-3"]
+                 [re-frame "0.10.5" :exclusions [cljsjs/react cljsjs/react-dom]]]
 
   :plugins [[lein-cljsbuild "1.1.6"]
             [lein-environ "1.1.0"]]
