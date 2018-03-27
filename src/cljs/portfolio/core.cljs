@@ -3,6 +3,7 @@
             [re-frame.core :as re-frame]
             [portfolio.events]
             [portfolio.subs]
+            [portfolio.effects]
             [portfolio.views :as views]
             [portfolio.config :as config]))
 

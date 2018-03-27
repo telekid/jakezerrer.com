@@ -7,8 +7,8 @@
  (fn  [_ _]
    db/default-db))
 
-(re-frame/reg-event-db
+(re-frame/reg-event-fx
  :navigate
-
- (fn [db [_ location]]
-   (assoc db :location location)))
+ (fn [cofx [_ location]]
+   {:db (assoc (:db cofx) :location location)
+    :scroll-to-top nil}))
