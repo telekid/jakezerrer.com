@@ -26,18 +26,12 @@
    wrapped-component
    [:figcaption.project__example-description caption]])
 
-;; TODO Rather than varargs, look up how this might be done with polymorphism
-(defn example-image [& content]
-  (let [{filename :filename
-         width :width
-         caption :caption}
-        ;; TODO This isn't a good way to do this
-        (first content)]
-    (example [:img.project__example-image {:src (resource-url filename)
-                                           :width width
-                                           :alt caption}]
-             caption
-             :auto)))
+(defn example-image [{:keys [filename width caption]}]
+  (example [:img.project__example-image {:src (resource-url filename)
+                                         :width width
+                                         :alt caption}]
+           caption
+           :auto))
 
 (defn example-video [& content]
   (let [{filename :filename
@@ -62,6 +56,14 @@
 (defn skills [& skills]
   [:ul.project__skills (map-indexed (fn [idx skill] [:li.project__skill {:key idx} skill]) skills)])
 
+(defn invision-prototype [{:keys [prototype-id]}]
+  [:div.project__prototype-wrap
+   [:iframe.project__prototype {:width "438"
+                                :height "930"
+                                :src (str "//invis.io/" prototype-id)
+                                :frame-border 0
+                                :allow-full-screen true}]])
+
 ;; TODO Make render-with accept a map of keys to functions
 (defn render-with [content]
   (map-indexed
@@ -75,6 +77,7 @@
                            :example-image example-image
                            :example-video example-video
                            :intro intro
+                           :invision-prototype invision-prototype
                            ;; Throw error
                            (fn [c] [:div c]))
                          elem-body)

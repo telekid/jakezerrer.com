@@ -167,6 +167,10 @@ figure {
     margin-bottom: 16px;
 }
 
+.project__description:last-child {
+    margin-bottom: 64px;
+}
+
 .project__section {
     font-size: 20px;
 }
@@ -236,6 +240,19 @@ figure {
     border-radius: 20px;
     padding: 0 8px;
     font-size: 12px;
+}
+
+.project__prototype-wrap {
+    margin-top: 16px;
+    width: 328.5px;
+    height: 658.5px;
+    overflow: hidden;
+}
+
+.project__prototype {
+    border: none;
+    transform: scale(0.75);
+    transform-origin: top left;
 }
 
 .project__example-video {
@@ -482,4 +499,17 @@ figure {
 .not-found__video {
     width: 100%;
     height: 100%;
+}
+
+.project__prototype-wrap {
+    margin-top: 16px;
+    width: 328.5px;
+    height: 658.5px;
+    overflow: hidden;
+}
+
+.project__prototype {
+    border: none;
+    transform: scale(0.75);
+    transform-origin: top left;
 }

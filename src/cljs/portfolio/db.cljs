@@ -31,7 +31,7 @@
       [:description "Nick Pope, sound designer for the Broadway show " [:i "Natasha, Pierre and the Great Comet of 1812,"] " approached me to help him solve an unusual design problem: what's the best way to pan sound two dimensionally around a theater?"]
       [:description "Unlike most Broadway shows, the actors in " [:i "Great Comet"] " moved not only on stage, but around the audience. Nick needed to find a way to position the voices of actors and musicians within the 2D plane that makes up the ground plan of the theater."]
       [:description "Though he had a sophisticated computerized mixing system that could take care of the actual audio computations (like panning and summing), the native software interface was too cumbersome to allow them make changes quickly."]
-      [:description "To read more about Nick's experience with Vodka, check out " [:a {:href ""} "this interview"] "."]
+      [:description "To read more about Nick's experience with Vodka, check out " [:a {:href "https://meyersound.com/news/all-the-house-is-a-stage/"} "this interview"] "."]
       [:skills "React Native" "Figma" "Swift"]
       [:example-image {:filename "vodka-screenshot.jpg" :width 450 :caption "Control surface for realtime two-dimensional audio placement"}]
       [:description "Vodka served as a multitouch front-end to Meyer Sound's CueStation software. The interface was fairly simple; it showed the positions of actors overlaid upon a groundplan of the theater. An operator could use their fingers to drag actor symbols around across the groundplan. Vodka would communicate those positional changes to CueStation via " [:abbr {:title "Open Sound Control"} "OSC"] ", and then CueStation would manage the panning of the audio."]
@@ -49,5 +49,8 @@
       [:description "Refuge was a side project that nearly snowballed into a startup."]
       [:description "The goal of Refuge was to build a social music platform that focused on helping users find, share and support new artists. The platform would help artists build a brand and gain exposure without the help of a record label."]
       [:description "Though Refuge never left the design & prototyping phase, to date, it remains one of my most beloved projects."]
-      [:description "To learn more about Refuge, check out the " [:a {:href "https://paper.dropbox.com/doc/Refuge-Overview-for-YC-R61kLiZFtC1MiOzmxPNjM"} "Y Combinator Pitch Document"] " (note: large document, some sections have trouble loading) and a sample " [:a {:href "https://projects.invisionapp.com/share/RBF07PMDY#/screens/269781422_Live_Feed"} "Invision Prototype"] "."]
-      [:skills "Figma" "Invision"]]}}})
+      [:description "To learn more about Refuge, check out the " [:a {:href "https://paper.dropbox.com/doc/Refuge-Overview-for-YC-R61kLiZFtC1MiOzmxPNjM"} "Y Combinator Pitch Document"] " (note: large document, some sections have trouble loading.)"]
+      [:skills "Figma" "Invision"]
+      [:subsection "Invision Prototype"]
+      [:description "To get a feel for Refuge, feel free to play around with the following " [:a {:href "https://projects.invisionapp.com/share/RBF07PMDY#/screens/269781422_Live_Feed"} "Invision Prototype"] "."]
+      [:invision-prototype {:prototype-id "FEF8LERM5"}]]}}})
