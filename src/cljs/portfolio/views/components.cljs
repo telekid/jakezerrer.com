@@ -12,16 +12,23 @@
   Additionally, you should pass the following params:
 
   `destination` accepts a keyword indicating the navigation destination.
+
   The string passed to `active-class` will be appended to the list of class
   names on the anchor tag when the `destination` is active.
+
+  `path-children` accepts a clojure set defining all children of the destination.
+  For example, 'portfolio-entry' is a child of 'portfolio'.
   "
-  [{:keys [destination active-class params] :as keys :or {:params {}}} & children]
+  [{:keys [destination active-class params path-children]
+    :as keys
+    :or {params {} path-children #{}}}
+   & children]
   (let [location (subscribe [:location])]
    [:a (-> keys
-           (dissoc :destination :active-class)
+           (dissoc :destination :active-class :path-children)
            (assoc :href (link-for destination params))
            ((fn [ks]
-              (if (= destination @location)
+              (if (contains? (conj path-children destination) @location)
                 (update-in ks [:class-name] #(str % " " active-class))
                 ks))))
     children]))
@@ -31,14 +38,14 @@
     [:div.site-header
      {:class-name (when (not @header-visible) "site-header--hidden")}
      (into [:nav
-            (map (fn [[destination label]]
+            (map (fn [[destination label path-children]]
                    [router-link {:class-name "site-header__link"
                                  :active-class "site-header__link--active"
                                  :key destination
+                                 :path-children path-children
                                  :destination destination} label])
-                 {:home "home"
-                  :portfolio "portfolio"})])]))
-                  ;; :notes "notes"})])]))
+                 [[:home "home"]
+                  [:portfolio "portfolio" #{:portfolio-entry}]])])]))
 
 (defn site-header-spacer []
   [:div.site-header-spacer])
