@@ -20,5 +20,5 @@
 (defn link-for
   "Generate a URL path for a given route."
   ;; TODO Remove hard-coded link URLs
-  ([route] (str "http://localhost:10555" (link route)))
-  ([route params] (str "http://localhost:10555" (link route params))))
+  ([route] (link route))
+  ([route params] (link route params)))
