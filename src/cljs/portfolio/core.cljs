@@ -5,6 +5,7 @@
             [portfolio.subs]
             [portfolio.effects]
             [portfolio.views :as views]
+            [pine.re-frame]
             [portfolio.config :as config]))
 
 (enable-console-print!)

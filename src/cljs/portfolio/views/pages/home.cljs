@@ -1,11 +1,10 @@
 (ns portfolio.views.pages.home
   (:require [portfolio.views.components :refer [page-wrap
-                                                <>
                                                 site-header
                                                 site-footer
                                                 center-page]]
-            [portfolio.cdn :refer [resource-url]]
-            [portfolio.router :refer [link-for]]))
+            [pine.re-frame.components :refer [view link]]
+            [portfolio.cdn :refer [resource-url]]))
 
 (defn single-image [{:keys [src offset width z-offset]}]
   [:div.home-rotate-wrap
@@ -35,8 +34,7 @@
    [:p "I'm a product designer and a software engineer. I delight in making complex things feel simple."]
    [:p "This site is here to keep track of my past work. Have a look around."]
    [:nav.home-page-content--nav
-    [:a.home-page-content--nav-button {:href (link-for :portfolio)} "view portfolio"]]])
-    ;; [:a.home-page-content--nav-button {:href (link-for :notes)} "view notes"]]])
+    [link {:class-name "home-page-content--nav-button" :route-id :portfolio} "view portfolio"]]])
 
 (defn home []
   [:div.home-page

@@ -4,8 +4,8 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.671" :scope "provided"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
+                 [org.clojure/clojurescript "1.9.908" :scope "provided"]
                  [com.cognitect/transit-clj "0.8.300"]
                  [ring "1.6.2"]
                  [ring/ring-defaults "0.3.1"]
@@ -13,15 +13,17 @@
                  [radicalzephyr/ring.middleware.logger "0.6.0"]
                  [compojure "1.6.0"]
                  [environ "1.1.0"]
+                 [reagent "0.8.0"]
+                 [re-frame "0.10.5"]
+                 [telekid/pine "0.1.5"]
                  [com.stuartsierra/component "0.3.2"]
                  [org.danielsz/system "0.4.0"]
                  [org.clojure/tools.namespace "0.2.11"]
                  [org.clojars.hz/bidi "2.1.2-SNAPSHOT"]
                  [http-kit "2.2.0"]
-                 [venantius/accountant "0.2.4"]
                  [cljsjs/react "16.2.0-3"]
                  [cljsjs/react-dom "16.2.0-3"]
-                 [re-frame "0.10.5" :exclusions [cljsjs/react cljsjs/react-dom]]]
+                 [venantius/accountant "0.2.4"]]
 
   :plugins [[lein-cljsbuild "1.1.6"]
             [lein-environ "1.1.0"]]
@@ -56,8 +58,7 @@
                            :output-dir "resources/public/js/compiled/out"
                            :source-map-timestamp true
                            :closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}
-                           :preloads [day8.re-frame.trace.preload]}}
-                           ;; :preloads [day8.re-frame-10x.preload]}}
+                           :preloads [day8.re-frame-10x.preload]}}
 
                {:id "test"
                 :source-paths ["src/cljs" "test/cljs" "src/cljc" "test/cljc"]
@@ -111,8 +112,7 @@
                              [com.cemerick/piggieback "0.2.2"]
                              [org.clojure/tools.nrepl "0.2.13"]
                              [lein-doo "0.1.7"]
-                             [day8.re-frame/trace "0.1.22"]
-                             ;; [day8.re-frame/re-frame-10x "0.2.0-react16"]
+                             [day8.re-frame/re-frame-10x "0.3.3-react16"]
                              [reloaded.repl "0.2.3"]]
 
               :plugins [[lein-figwheel "0.5.11"]

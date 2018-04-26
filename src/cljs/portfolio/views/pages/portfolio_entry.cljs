@@ -1,13 +1,11 @@
 (ns portfolio.views.pages.portfolio-entry
-  (:require [portfolio.router :refer [link-for]]
-            [goog.string :as gstring]
+  (:require [goog.string :as gstring]
             [portfolio.cdn :refer [resource-url]]
             [re-frame.core :refer [subscribe]]
             [portfolio.views.components :refer [site-header
                                                 site-header-spacer
                                                 page-wrap
                                                 site-footer
-                                                <>
                                                 center-page]]
             [goog.string.format]))
 
@@ -90,3 +88,8 @@
         [company :name (:name @entry)
                  :description (:description @entry)
                  :content (render-with (:content @entry))]]))
+
+
+;; (defn portfolio-entry []
+;;   (let [entry (subscribe [:current-portfolio-entry])]
+;;     [:pre entry]))

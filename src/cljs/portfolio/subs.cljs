@@ -3,31 +3,20 @@
   (:require [re-frame.core :as re-frame]))
 
 (re-frame/reg-sub
- :location
- (fn [db]
-   (:handler (:location db))))
-
-(re-frame/reg-sub
- :route-params
- (fn [db]
-   (:route-params (:location db))))
-
-(re-frame/reg-sub
  :portfolio-entries
  (fn [db]
    (:portfolio db)))
 
 (re-frame/reg-sub
  :current-portfolio-entry
- :<- [:location]
- :<- [:route-params]
+ :<- [:pine/active-routes]
+ :<- [:pine/route-params]
  :<- [:portfolio-entries]
- (fn [[location route-params portfolio-entries] [_]]
-   (when (= location :portfolio-entry)
-     ((keyword (:id route-params)) portfolio-entries))))
+ (fn [[active-routes route-params portfolio-entries] [_]]
+   ((keyword (:id (:portfolio-entry route-params))) portfolio-entries)))
 
 (re-frame/reg-sub
  :header-visible
- :<- [:location]
- (fn [location _]
-  (not (= location :home))))
+ :<- [:pine/active-routes]
+ (fn [active-routes _]
+  (not (contains? active-routes :home))))

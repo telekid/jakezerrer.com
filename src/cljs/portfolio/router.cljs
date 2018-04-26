@@ -1,24 +1,14 @@
 (ns portfolio.router
   (:require [accountant.core :as accountant]
             [portfolio.route-definitions :refer [routes]]
-            [bidi.bidi :refer [path-for match-route]]
+            [pine.router :refer [set-routes! match-route]]
             [re-frame.core :refer [dispatch subscribe]]))
 
+(set-routes! routes)
 
 (defn start []
   (accountant/configure-navigation!
-   {:nav-handler #(dispatch [:navigate (match-route routes %)])
-    :path-exists? #(boolean (match-route routes %))})
+   {:nav-handler #(dispatch [:handle-url-change %])
+    :path-exists? #(boolean (match-route %))})
   (accountant/dispatch-current!))
 
-(defn link
-  ([route]
-   (path-for routes route))
-  ([route params]
-   (apply path-for routes route (flatten (seq params)))))
-
-(defn link-for
-  "Generate a URL path for a given route."
-  ;; TODO Remove hard-coded link URLs
-  ([route] (link route))
-  ([route params] (link route params)))

@@ -1,9 +1,9 @@
 (ns portfolio.views.pages.portfolio
-  (:require [portfolio.router :refer [link-for]]
-            [goog.string :as gstring]
+  (:require [goog.string :as gstring]
             [portfolio.cdn :refer [resource-url]]
             [re-frame.core :refer [dispatch subscribe]]
             [portfolio.cdn :refer [resource-url]]
+            [pine.re-frame.components :refer [link]]
             [portfolio.views.components :refer [page-wrap
                                                 site-header
                                                 site-header-spacer
@@ -14,8 +14,11 @@
 (defn header [title]
   [:h1.portfolio-header title])
 
-(defn entry [{:keys [name id description]}]
-  [:a.portfolio__entry {:href (link-for :portfolio-entry {:id id})}
+(defn entry [{:keys [name id description key]}]
+  [link {:route-id :portfolio-entry
+         :key key
+         :params {:portfolio-entry {:id id}}
+         :class-name "portfolio__entry"}
    [:img.portfolio__entry-image
     {:src (resource-url (str "portfolio/"
                              (clojure.string/lower-case name)
@@ -28,9 +31,10 @@
   [:div.portfolio-entry-list
     (map-indexed
      (fn [idx [entry-id {:keys [name description]}]]
-       ^{:key idx} [entry {:name name
-                                     :description description
-                                     :id entry-id}])
+       [entry {:name name
+               :key idx
+               :description description
+               :id entry-id}])
      entries)])
 
 (defn portfolio [props & children]
