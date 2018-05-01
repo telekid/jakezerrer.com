@@ -15,7 +15,7 @@
                  [environ "1.1.0"]
                  [reagent "0.8.0"]
                  [re-frame "0.10.5"]
-                 [telekid/pine "0.1.5"]
+                 [telekid/pine "0.1.6"]
                  [com.stuartsierra/component "0.3.2"]
                  [org.danielsz/system "0.4.0"]
                  [org.clojure/tools.namespace "0.2.11"]

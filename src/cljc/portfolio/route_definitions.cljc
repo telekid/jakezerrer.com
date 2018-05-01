@@ -1,14 +1,14 @@
 (ns portfolio.route-definitions)
 
 (def routes [{:route-id :home
-              :test-path "/"}
+              :pattern "/"}
              {:route-id :portfolio
-              :test-path "/portfolio"
+              :pattern "/portfolio"
               :routes [{:route-id :portfolio-entry
-                        :test-path ["/" :id]}]}
+                        :pattern ["/" :id]}]}
              {:route-id :public
-              :test-path "/public"
+              :pattern "/public"
               :routes [{:route-id :public-asset
-                        :test-path true}]}
+                        :pattern true}]}
              {:route-id :not-found
-              :test-path true}])
+              :pattern true}])
